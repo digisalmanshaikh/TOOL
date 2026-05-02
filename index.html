@@ -1401,37 +1401,43 @@
         
 
         // Paste your Google Apps Script Web App URL here:
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbw6SzNsIHs4ftar2rjmHSfhJRsUzXsPlzajcugJLm9PvW1UU-93Eybt6eoISMklRRQ4/exec';
-        const form = document.getElementById('registrationForm');
+const scriptURL = 'https://script.google.com/macros/s/AKfycbw6SzNsIHs4ftar2rjmHSfhJRsUzXsPlzajcugJLm9PvW1UU-93Eybt6eoISMklRRQ4/exec';
+const form = document.getElementById('registrationForm');
 
-        form.addEventListener('submit', e => {
-        // Prevent the page from refreshing
-         e.preventDefault();
+form.addEventListener('submit', e => {
+    // Prevent the page from refreshing
+    e.preventDefault();
     
-         // Change button text to show it's loading
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalBtnText = submitBtn.innerText;
-        submitBtn.innerText = "Registering...";
-        submitBtn.disabled = true;
+    // Change button text to show it's loading
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.innerText;
+    submitBtn.innerText = "Registering...";
+    submitBtn.disabled = true;
 
-        // Package the form data automatically
-        const formData = new FormData(form);
+    // Package the form data automatically
+    const formData = new FormData(form);
 
-        // Send the data to the Google Script
-        fetch(scriptURL, { method: 'POST', body: formData })
-            .then(response => {
-                // Once the data is successfully saved, redirect to the Thank You page
-                window.location.href = "Thank You.html"; 
-            })
-            .catch(error => {
-                // If there is an error, log it and reset the button
-                console.error('Error!', error.message);
-                submitBtn.innerText = originalBtnText;
-                submitBtn.disabled = false;
-                alert("Oops! Something went wrong. Please try again.");
-            });
-        });
-
+    // Send the data to the Google Script WITH 'no-cors' mode
+    fetch(scriptURL, { 
+        method: 'POST', 
+        body: formData,
+        mode: 'no-cors' // <--- THIS IS THE CRUCIAL FIX!
+    })
+    .then(response => {
+        // Because of 'no-cors', the response is "opaque" (unreadable), 
+        // but reaching this block means the data was sent successfully!
+        
+        // Redirect to your Thank You page
+        window.location.href = "thank you.html"; 
+    })
+    .catch(error => {
+        // If there is an actual network failure, this will trigger
+        console.error('Error!', error.message);
+        submitBtn.innerText = originalBtnText;
+        submitBtn.disabled = false;
+        alert("Oops! Something went wrong. Please check your internet connection and try again.");
+    });
+});
         
         // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(button => {
