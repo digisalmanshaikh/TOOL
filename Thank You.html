@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're Registered | Webinar Confirmation</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root {
+        --primary: #4F46E5;
+        --primary-dark: #4338CA;
+        --success: #10B981;
+        --success-light: #D1FAE5;
+        --text-primary: #111827;
+        --text-secondary: #6B7280;
+        --bg: #F9FAFB;
+        --white: #FFFFFF;
+        --border: #E5E7EB;
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    html {
+        font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--text-primary);
+        background: var(--bg);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 16px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 600px;
+        background: var(--white);
+        border-radius: 16px;
+        box-shadow: var(--shadow-lg);
+        overflow: hidden;
+        animation: slideUp 0.5s ease-out;
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .header {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        padding: 40px 24px 48px;
+        text-align: center;
+        position: relative;
+    }
+
+    .checkmark-wrapper {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 20px;
+        background: var(--white);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        animation: scaleIn 0.5s 0.2s ease-out backwards;
+    }
+
+    @keyframes scaleIn {
+        from {
+            transform: scale(0);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    .checkmark-wrapper svg {
+        width: 40px;
+        height: 40px;
+        stroke: var(--success);
+        stroke-width: 3;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+        animation: drawCheck 0.5s 0.5s ease-out backwards;
+    }
+
+    @keyframes drawCheck {
+        from {
+            stroke-dasharray: 50;
+            stroke-dashoffset: 50;
+        }
+        to {
+            stroke-dasharray: 50;
+            stroke-dashoffset: 0;
+        }
+    }
+
+    h1 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: var(--white);
+        margin-bottom: 8px;
+        letter-spacing: -0.02em;
+    }
+
+    .subheader {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: 400;
+    }
+
+    .content {
+        padding: 32px 24px;
+    }
+
+    .section {
+        margin-bottom: 32px;
+    }
+
+    .section:last-child {
+        margin-bottom: 0;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 16px;
+        letter-spacing: -0.01em;
+    }
+
+    .steps {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .step {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+    }
+
+    .step-number {
+        flex-shrink: 0;
+        width: 32px;
+        height: 32px;
+        background: var(--success-light);
+        color: var(--success);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 0.875rem;
+    }
+
+    .step-content h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 4px;
+    }
+
+    .step-content p {
+        font-size: 0.9375rem;
+        color: var(--text-secondary);
+        line-height: 1.5;
+    }
+
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        min-height: 52px;
+        padding: 14px 24px;
+        background: var(--primary);
+        color: var(--white);
+        border: none;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        box-shadow: var(--shadow);
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .btn:active {
+        transform: translateY(0);
+    }
+
+    .btn svg {
+        width: 20px;
+        height: 20px;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+    }
+
+    .info-card {
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 20px;
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+    }
+
+    .info-icon {
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        margin-top: 2px;
+    }
+
+    .info-icon svg {
+        width: 100%;
+        height: 100%;
+        stroke: var(--primary);
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+    }
+
+    .info-text h3 {
+        font-size: 0.9375rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 4px;
+    }
+
+    .info-text p {
+        font-size: 0.875rem;
+        color: var(--text-secondary);
+        line-height: 1.5;
+    }
+
+    .expect-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .expect-item {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .expect-item svg {
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+        stroke: var(--success);
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+        margin-top: 2px;
+    }
+
+    .expect-item span {
+        font-size: 0.9375rem;
+        color: var(--text-secondary);
+        line-height: 1.5;
+    }
+
+    @media (min-width: 768px) {
+        body {
+            padding: 40px 24px;
+        }
+
+        .header {
+            padding: 48px 40px 56px;
+        }
+
+        .checkmark-wrapper {
+            width: 88px;
+            height: 88px;
+        }
+
+        .checkmark-wrapper svg {
+            width: 44px;
+            height: 44px;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        .subheader {
+            font-size: 1.125rem;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        h2 {
+            font-size: 1.375rem;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .step-content h3 {
+            font-size: 1.0625rem;
+        }
+
+        .step-content p {
+            font-size: 1rem;
+        }
+
+        .btn {
+            min-height: 56px;
+            font-size: 1.0625rem;
+        }
+
+        .info-text h3 {
+            font-size: 1rem;
+        }
+
+        .info-text p {
+            font-size: 0.9375rem;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="checkmark-wrapper">
+                <svg viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+            <h1>You're Registered</h1>
+            <p class="subheader">Check your email for confirmation details</p>
+        </header>
+
+        <main class="content">
+            <section class="section">
+                <h2>What happens next</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Confirmation email sent</h3>
+                            <p>We've sent your webinar link and details to your inbox. It should arrive within 5 minutes.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Get a reminder</h3>
+                            <p>We'll send you a friendly reminder 1 hour before the webinar starts so you don't miss it.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Join us live</h3>
+                            <p>Click the link in your email to join the webinar at the scheduled time. No downloads needed.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <button class="btn" id="calendarBtn">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    Add to Calendar
+                </button>
+            </section>
+
+            <section class="section">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <div class="info-text">
+                        <h3>No spam reminder</h3>
+                        <p>We respect your inbox. You'll only receive emails about this webinar and we never share your information.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>What to expect</h2>
+                <div class="expect-list">
+                    <div class="expect-item">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>60 minutes of actionable strategies you can implement immediately</span>
+                    </div>
+                    <div class="expect-item">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Live Q and A session to get your specific questions answered</span>
+                    </div>
+                    <div class="expect-item">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Downloadable resources and slides after the webinar</span>
+                    </div>
+                    <div class="expect-item">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Recording available for 48 hours if you cannot attend live</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+<script>
+    document.getElementById('calendarBtn').addEventListener('click', function() {
+        const title = 'Webinar: Growth Strategies for 2024';
+        const description = 'Join us for an exclusive webinar on proven growth strategies.';
+        const location = 'Online';
+        const startDate = '20240515T180000Z';
+        const endDate = '20240515T190000Z';
+        
+        const googleCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(description)}&location=${encodeURIComponent(location)}`;
+        
+        const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:${title}
+DTSTART:${startDate}
+DTEND:${endDate}
+DESCRIPTION:${description}
+LOCATION:${location}
+END:VEVENT
+END:VCALENDAR`;
+        
+        const isApple = /iPhone|iPad|iPod|Macintosh/.test(navigator.userAgent);
+        
+        if (isApple) {
+            const blob = new Blob([icsContent], { type: 'text/calendar' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'webinar.ics';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        } else {
+            window.open(googleCalUrl, '_blank');
+        }
+    });
+</script>
+</body>
+</html>
