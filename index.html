@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Varsha's Free Live Session | Build Flexible Income</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    :root {
+        --primary: #2563eb;
+        --primary-dark: #1e40af;
+        --secondary: #8b5cf6;
+        --accent: #f59e0b;
+        --dark: #0f172a;
+        --gray-50: #f8fafc;
+        --gray-100: #f1f5f9;
+        --gray-200: #e2e8f0;
+        --gray-300: #cbd5e1;
+        --gray-600: #475569;
+        --gray-700: #334155;
+        --success: #10b981;
+        --danger: #ef4444;
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+        background: #ffffff;
+        overflow-x: hidden;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    section {
+        padding: 56px 0;
+    }
+    
+    h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+        font-weight: 800;
+        margin-bottom: 16px;
+        letter-spacing: -0.02em;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+        line-height: 1.3;
+        font-weight: 700;
+        margin-bottom: 16px;
+        letter-spacing: -0.02em;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+        line-height: 1.4;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+    
+    p {
+        color: var(--gray-600);
+        margin-bottom: 16px;
+    }
+    
+    .btn {
+        display: inline-block;
+        padding: 14px 32px;
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 12px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .btn-primary {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        color: white;
+        box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.4);
+    }
+    
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 30px -5px rgba(37, 99, 235, 0.5);
+    }
+    
+    .btn-primary:active {
+        transform: translateY(0);
+    }
+    
+    .btn-block {
+        width: 100%;
+        display: block;
+    }
+    
+    .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 14px;
+        background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
+        border: 1px solid rgba(245, 158, 11, 0.3);
+        color: var(--accent);
+        border-radius: 50px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    
+    .badge-dot {
+        width: 8px;
+        height: 8px;
+        background: var(--accent);
+        border-radius: 50%;
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    
+    @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+    }
+    
+    /* Header */
+    .header {
+        background: white;
+        border-bottom: 1px solid var(--gray-200);
+        padding: 16px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.9);
+    }
+    
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .header-badge {
+        padding: 6px 12px;
+        background: var(--success);
+        color: white;
+        border-radius: 8px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+    }
+    
+    /* Hero */
+    .hero {
+        background: linear-gradient(180deg, var(--gray-50) 0%, #ffffff 100%);
+        padding: 40px 0 60px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+    }
+    
+    .hero-grid {
+        display: grid;
+        gap: 40px;
+        position: relative;
+    }
+    
+    .hero-content h1 span {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.125rem;
+        color: var(--gray-700);
+        margin-bottom: 24px;
+    }
+    
+    .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-bottom: 32px;
+    }
+    
+    .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 16px;
+        background: white;
+        border: 1px solid var(--gray-200);
+        border-radius: 10px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        box-shadow: var(--shadow-sm);
+    }
+    
+    .meta-icon {
+        width: 18px;
+        height: 18px;
+        color: var(--primary);
+    }
+    
+    /* Countdown */
+    .countdown {
+        background: white;
+        border: 2px solid var(--primary);
+        border-radius: 16px;
+        padding: 20px;
+        margin-bottom: 24px;
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .countdown-label {
+        text-align: center;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--gray-600);
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .countdown-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+    }
+    
+    .countdown-item {
+        text-align: center;
+    }
+    
+    .countdown-value {
+        display: block;
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: var(--primary);
+        line-height: 1;
+        margin-bottom: 4px;
+    }
+    
+    .countdown-text {
+        font-size: 0.75rem;
+        color: var(--gray-600);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    /* Seats */
+    .seats-counter {
+        background: linear-gradient(135deg, rgba(239, 68, 68, 0.05) 0%, rgba(239, 68, 68, 0.02) 100%);
+        border: 1px solid rgba(239, 68, 68, 0.2);
+        border-radius: 12px;
+        padding: 16px;
+        margin-bottom: 24px;
+    }
+    
+    .seats-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+    
+    .seats-text {
+        font-weight: 600;
+        color: var(--dark);
+        font-size: 0.875rem;
+    }
+    
+    .seats-number {
+        font-weight: 800;
+        color: var(--danger);
+        font-size: 1.125rem;
+    }
+    
+    .seats-bar {
+        height: 8px;
+        background: var(--gray-200);
+        border-radius: 50px;
+        overflow: hidden;
+    }
+    
+    .seats-fill {
+        height: 100%;
+        background: linear-gradient(90deg, var(--danger) 0%, var(--accent) 100%);
+        border-radius: 50px;
+        width: 73%;
+        transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+    }
+    
+    /* Form */
+    .form-card {
+        background: white;
+        border-radius: 20px;
+        padding: 32px 24px;
+        box-shadow: var(--shadow-xl);
+        border: 1px solid var(--gray-100);
+    }
+    
+    .form-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+    
+    .form-subtitle {
+        text-align: center;
+        color: var(--gray-600);
+        margin-bottom: 24px;
+        font-size: 0.875rem;
+    }
+    
+    .form-group {
+        margin-bottom: 16px;
+    }
+    
+    .form-label {
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--dark);
+        margin-bottom: 6px;
+    }
+    
+    .form-input,
+    .form-select,
+    .form-textarea {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 1rem;
+        border: 2px solid var(--gray-200);
+        border-radius: 10px;
+        background: white;
+        transition: all 0.2s;
+        font-family: inherit;
+    }
+    
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    
+    .form-textarea {
+        resize: vertical;
+        min-height: 80px;
+    }
+    
+    .form-note {
+        text-align: center;
+        font-size: 0.75rem;
+        color: var(--gray-600);
+        margin-top: 12px;
+    }
+    
+    .form-success {
+        display: none;
+        padding: 16px;
+        background: rgba(16, 185, 129, 0.1);
+        border: 1px solid var(--success);
+        border-radius: 10px;
+        color: var(--success);
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+    
+    /* Agenda */
+    .agenda {
+        background: var(--gray-50);
+    }
+    
+    .section-header {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 48px;
+    }
+    
+    .section-label {
+        display: inline-block;
+        padding: 6px 16px;
+        background: rgba(37, 99, 235, 0.1);
+        color: var(--primary);
+        border-radius: 50px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin-bottom: 16px;
+    }
+    
+    .modules-grid {
+        display: grid;
+        gap: 20px;
+    }
+    
+    .module-card {
+        background: white;
+        border: 1px solid var(--gray-200);
+        border-radius: 16px;
+        padding: 24px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .module-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+        transform: scaleY(0);
+        transition: transform 0.3s;
+    }
+    
+    .module-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--primary);
+    }
+    
+    .module-card:hover::before {
+        transform: scaleY(1);
+    }
+    
+    .module-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        color: white;
+        border-radius: 10px;
+        font-weight: 700;
+        margin-bottom: 16px;
+        font-size: 1.125rem;
+    }
+    
+    .module-title {
+        font-size: 1.125rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: var(--dark);
+    }
+    
+    .module-desc {
+        color: var(--gray-600);
+        font-size: 0.9375rem;
+        margin: 0;
+    }
+    
+    /* Is This For You */
+    .personas-grid {
+        display: grid;
+        gap: 20px;
+    }
+    
+    .persona-card {
+        background: white;
+        border: 1px solid var(--gray-200);
+        border-radius: 16px;
+        padding: 28px;
+        text-align: center;
+        transition: all 0.3s;
+    }
+    
+    .persona-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--secondary);
+    }
+    
+    .persona-icon {
+        width: 64px;
+        height: 64px;
+        margin: 0 auto 16px;
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+    }
+    
+    .persona-title {
+        font-size: 1.125rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+    
+    .persona-desc {
+        font-size: 0.9375rem;
+        color: var(--gray-600);
+        margin: 0;
+    }
+    
+    /* Testimonials */
+    .testimonials {
+        background: var(--gray-50);
+    }
+    
+    .testimonials-grid {
+        display: grid;
+        gap: 24px;
+    }
+    
+    .testimonial-card {
+        background: white;
+        border: 1px solid var(--gray-200);
+        border-radius: 16px;
+        padding: 28px;
+        position: relative;
+    }
+    
+    .testimonial-quote {
+        font-size: 3rem;
+        color: var(--primary);
+        opacity: 0.2;
+        line-height: 1;
+        margin-bottom: -16px;
+    }
+    
+    .testimonial-text {
+        font-size: 1rem;
+        color: var(--gray-700);
+        line-height: 1.7;
+        margin-bottom: 20px;
+        font-style: italic;
+    }
+    
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .author-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 700;
+        font-size: 1.125rem;
+    }
+    
+    .author-info {
+        flex: 1;
+    }
+    
+    .author-name {
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 2px;
+    }
+    
+    .author-role {
+        font-size: 0.875rem;
+        color: var(--gray-600);
+    }
+    
+    
+    /* FAQ */
+    .faq {
+        background: var(--gray-50);
+    }
+    
+    .faq-list {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .faq-item {
+        background: white;
+        border: 1px solid var(--gray-200);
+        border-radius: 12px;
+        margin-bottom: 12px;
+        overflow: hidden;
+        transition: all 0.3s;
+    }
+    
+    .faq-item.active {
+        box-shadow: var(--shadow);
+        border-color: var(--primary);
+    }
+    
+    .faq-question {
+        width: 100%;
+        padding: 20px 24px;
+        background: none;
+        border: none;
+        text-align: left;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--dark);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        transition: all 0.2s;
+    }
+    
+    .faq-question:hover {
+        background: var(--gray-50);
+    }
+    
+    .faq-icon {
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+        transition: transform 0.3s;
+    }
+    
+    .faq-item.active .faq-icon {
+        transform: rotate(180deg);
+    }
+    
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .faq-item.active .faq-answer {
+        max-height: 300px;
+    }
+    
+    .faq-answer-content {
+        padding: 0 24px 20px;
+        color: var(--gray-600);
+        line-height: 1.7;
+    }
+    
+    /* Footer */
+    .footer {
+        background: var(--dark);
+        color: white;
+        padding: 48px 0 24px;
+    }
+    
+    .footer-content {
+        display: grid;
+        gap: 32px;
+        margin-bottom: 32px;
+        padding-bottom: 32px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .footer-brand h3 {
+        color: white;
+        margin-bottom: 12px;
+    }
+    
+    .footer-brand p {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.875rem;
+    }
+    
+    .footer-disclaimer {
+        background: rgba(239, 68, 68, 0.1);
+        border: 1px solid rgba(239, 68, 68, 0.3);
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 24px;
+    }
+    
+    .disclaimer-title {
+        font-weight: 700;
+        color: var(--danger);
+        margin-bottom: 8px;
+        font-size: 0.875rem;
+    }
+    
+    .disclaimer-text {
+        font-size: 0.8125rem;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+        margin: 0;
+    }
+    
+    .footer-bottom {
+        text-align: center;
+        font-size: 0.8125rem;
+        color: rgba(255, 255, 255, 0.5);
+    }
+    
+    /* Sticky CTA Mobile */
+    .sticky-cta {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 16px;
+        background: white;
+        border-top: 1px solid var(--gray-200);
+        box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+        z-index: 99;
+    }
+    
+    /* Tablet: 768px */
+    @media (min-width: 768px) {
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        section { padding: 72px 0; }
+        
+        .hero-grid {
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 48px;
+            align-items: center;
+        }
+        
+        .modules-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .personas-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .testimonials-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .about-grid {
+            grid-template-columns: 0.8fr 1.2fr;
+        }
+        
+        .footer-content {
+            grid-template-columns: 2fr 1fr 1fr;
+        }
+    }
+    
+    /* Desktop: 1024px */
+    @media (min-width: 1024px) {
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.25rem; }
+        section { padding: 96px 0; }
+        
+        .modules-grid {
+            grid-template-columns: repeat(5, 1fr);
+        }
+        
+        .personas-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        .testimonials-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .countdown-value {
+            font-size: 2.25rem;
+        }
+    }
+    
+    /* Mobile */
+    @media (max-width: 767px) {
+        .sticky-cta {
+            display: block;
+        }
+        
+        body {
+            padding-bottom: 80px;
+        }
+        
+        .hero {
+            padding: 32px 0 48px;
+        }
+        
+        .form-card {
+            padding: 24px 20px;
+        }
+    }
+    
+    /* Trusted & Responsive About Section (No Badge) */
+.about-trusted {
+    padding: clamp(60px, 10vw, 100px) 0;
+    background: linear-gradient(180deg, var(--gray-50) 0%, #ffffff 100%);
+}
+
+.about-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Image Styling - Refined for better balance without the badge */
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+}
+
+.profile-image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 30px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8rem;
+    color: white;
+    font-weight: 800;
+    box-shadow: var(--shadow-xl);
+    border: 12px solid white; /* Slightly thicker border for a framed look */
+    overflow: hidden;
+}
+
+/* Content Styling */
+.content-container {
+    width: 100%;
+}
+
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.stat-box {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid var(--gray-200);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.stat-box:hover {
+    border-color: var(--primary);
+    transform: translateY(-3px);
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 4px;
+}
+
+/* Responsive Layout */
+@media (min-width: 992px) {
+    .about-flex {
+        flex-direction: row;
+        gap: 80px;
+    }
+    
+    .image-container {
+        flex: 1;
+    }
+    
+    .content-container {
+        flex: 1.3;
+    }
+    
+    .stats-row {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+</style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Varsha Sharma</div>
+                <div class="header-badge">100% FREE</div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="badge">
+                        <span class="badge-dot"></span>
+                        Live Session This Week
+                    </div>
+                    <h1>How to Build a <span>Flexible Income</span> Around Your Existing Life</h1>
+                    <p class="hero-subtitle">Join Varsha for a powerful 2 hour live workshop and discover the exact framework to create income streams that fit your schedule without quitting your job or sacrificing family time.</p>
+                    
+                    <div class="hero-meta">
+                        <div class="meta-item">
+                            <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>Weekday Evening</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>7:00 PM to 9:00 PM</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>Live on Zoom</span>
+                        </div>
+                    </div>
+
+                    <div class="countdown">
+                        <div class="countdown-label">Session Starts In</div>
+                        <div class="countdown-grid">
+                            <div class="countdown-item">
+                                <span class="countdown-value" id="days">00</span>
+                                <span class="countdown-text">Days</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-value" id="hours">00</span>
+                                <span class="countdown-text">Hours</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-value" id="minutes">00</span>
+                                <span class="countdown-text">Minutes</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-value" id="seconds">00</span>
+                                <span class="countdown-text">Seconds</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="seats-counter">
+                        <div class="seats-header">
+                            <span class="seats-text">Seats Registered</span>
+                            <span class="seats-number">73 of 100</span>
+                        </div>
+                        <div class="seats-bar">
+                            <div class="seats-fill"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-form">
+                    <div class="form-card">
+                        <h3 class="form-title">Reserve Your Free Spot</h3>
+                        <p class="form-subtitle">100% FREE NO SALES PITCH</p>
+                        
+                        <div class="form-success" id="formSuccess">
+                            Registration successful! Check your email for Zoom link.
+                        </div>
+                        
+                        <form id="registrationForm">
+    <!-- 1. First Name (Required) -->
+    <div class="form-group">
+        <label class="form-label" for="firstName">First Name</label>
+        <input type="text" class="form-input" id="firstName" placeholder="Enter your first name" required>
+    </div>
+    
+    <!-- 2. WhatsApp Number (Required & Emphasized) -->
+    <div class="form-group">
+        <label class="form-label" for="whatsapp">WhatsApp Number</label>
+        <input type="tel" class="form-input" id="whatsapp" placeholder="10 digit mobile number" required>
+    </div>
+    
+    <!-- 3. Email (Optional) -->
+    <div class="form-group">
+        <label class="form-label" for="email">Email Address (Optional)</label>
+        <!-- Note: Removed the "required" attribute here -->
+        <input type="email" class="form-input" id="email" placeholder="your@email.com">
+    </div>
+    
+    <button type="submit" class="btn btn-primary btn-block">Register for Free Session</button>
+    <p class="form-note">You will receive the Zoom link instantly on WhatsApp.</p>
+</form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="agenda">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Session Agenda</span>
+                <h2>What You Will Learn in 2 Hours</h2>
+                <p>Actionable strategies you can implement immediately to start building flexible income around your current commitments</p>
+            </div>
+            
+            <div class="modules-grid">
+                <div class="module-card">
+                    <div class="module-number">1</div>
+                    <h3 class="module-title">Mindset Shift</h3>
+                    <p class="module-desc">Break limiting beliefs about time and money that keep you stuck in the 9 to 5 trap</p>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-number">2</div>
+                    <h3 class="module-title">Income Models</h3>
+                    <p class="module-desc">Discover 7 proven flexible income streams perfect for busy schedules</p>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-number">3</div>
+                    <h3 class="module-title">Skill Stacking</h3>
+                    <p class="module-desc">How to combine your existing skills to create high value offers in 30 days</p>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-number">4</div>
+                    <h3 class="module-title">Time System</h3>
+                    <p class="module-desc">The 2 hour productivity framework to build income without quitting your job</p>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-number">5</div>
+                    <h3 class="module-title">Action Plan</h3>
+                    <p class="module-desc">Your personalized roadmap to make your first 10K in flexible income</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="for-you">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Is This For You</span>
+                <h2>This Session is Perfect If You Are</h2>
+                <p>If any of these sound like you, this free live session will give you the exact blueprint you need</p>
+            </div>
+            
+            <div class="personas-grid">
+                <div class="persona-card">
+                    <div class="persona-icon">💼</div>
+                    <h3 class="persona-title">Working Professional</h3>
+                    <p class="persona-desc">Stuck in 9 to 5 and want to build side income without risking your job or burning out</p>
+                </div>
+                
+                <div class="persona-card">
+                    <div class="persona-icon">👩‍👧‍👦</div>
+                    <h3 class="persona-title">Homemaker or Mom</h3>
+                    <p class="persona-desc">Want financial independence and contribute to family income while managing home</p>
+                </div>
+                
+                <div class="persona-card">
+                    <div class="persona-icon">🎓</div>
+                    <h3 class="persona-title">Student or Graduate</h3>
+                    <p class="persona-desc">Looking to earn while studying and build skills that pay before graduation</p>
+                </div>
+                
+                <div class="persona-card">
+                    <div class="persona-icon">🚀</div>
+                    <h3 class="persona-title">Aspiring Entrepreneur</h3>
+                    <p class="persona-desc">Have business ideas but need clarity on where to start and how to monetize</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Testimonials</span>
+                <h2>Success Stories from Past Attendees</h2>
+                <p>Real people who attended this session and transformed their income in 90 days</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">Varsha's session was a game changer. I started my freelance writing side hustle using her framework and made 35K in my first month while working full time. No fluff, just pure action.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">PA</div>
+                        <div class="author-info">
+                            <div class="author-name">Priya Agarwal</div>
+                            <div class="author-role">IT Professional, Bangalore</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">As a stay at home mom, I thought earning was impossible. Varsha showed me how to use my cooking skills online. Now I run a successful meal prep business from home earning 45K monthly.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-info">
+                            <div class="author-name">Shweta Mehta</div>
+                            <div class="author-role">Homemaker, Mumbai</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">The time management system Varsha taught helped me launch my social media agency while in final year college. I now have 3 clients and earn more than my friends in jobs.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RK</div>
+                        <div class="author-info">
+                            <div class="author-name">Rahul Kumar</div>
+                            <div class="author-role">College Student, Delhi</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-trusted" id="about">
+    <div class="container">
+        <div class="about-flex">
+            
+            <!-- Profile Image Side -->
+            <div class="image-container">
+                <div class="profile-image">
+                    <img src="https://wallpapercave.com/wp/wp6396837.jpg" alt="Varsha Sharma" style="width:100%; height:100%; object-fit:cover;">                   
+                </div>
+            </div>
+
+            <!-- Content Side -->
+            <div class="content-container">
+                <span class="section-label">Your Workshop Host</span>
+                <h2 style="margin: 15px 0;">Meet Your Host Varsha</h2>
+                
+                <div class="about-bio" style="color: var(--gray-700); line-height: 1.7;">
+                    <p>Varsha is a <strong>Business Strategist and Flexible Income Coach</strong> who has helped over 5000 Indians build secondary income streams without quitting their primary responsibilities.</p>
+                    <p>After quitting her corporate job at 28, she built multiple 6 figure income streams while traveling and taking care of her family. Today she teaches the exact same systems that transformed her life.</p>
+                    <p style="margin-top: 15px;">Featured in <strong>Economic Times, YourStory, and Business Standard</strong> for her work in empowering women and professionals to achieve financial freedom through flexible work.</p>
+                </div>
+
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <span class="stat-value">500+</span>
+                        <span class="stat-label" style="font-size: 0.85rem; color: var(--gray-600);">Trained</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value">6+ Yrs</span>
+                        <span class="stat-label" style="font-size: 0.85rem; color: var(--gray-600);">Experience</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value">92%</span>
+                        <span class="stat-label" style="font-size: 0.85rem; color: var(--gray-600);">Success Rate</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value">4.9/5</span>
+                        <span class="stat-label" style="font-size: 0.85rem; color: var(--gray-600);">Session Rating</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">FAQ</span>
+                <h2>Frequently Asked Questions</h2>
+                <p>Got questions? We have answers. If you do not find your answer here, reach out on WhatsApp</p>
+            </div>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is this session really 100 percent free?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes, absolutely free. There is NO SALES PITCH in this session. Varsha believes in providing massive value first. You will learn actionable strategies that you can implement right away without buying anything.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What if I cannot attend at 7 PM?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            This is a live session only and recordings are not provided to maintain exclusivity and engagement. We strongly recommend blocking your calendar for 7 to 9 PM. The session is packed with live Q and A that you will miss in recordings.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do I need any prior experience or skills?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Not at all. This session is designed for complete beginners. Varsha will show you how to identify and monetize skills you already have. Whether you are a student, homemaker, or professional, you will find opportunities that fit your profile.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How will I receive the Zoom link?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Immediately after registration, you will receive the Zoom link on both WhatsApp and Email. Check your inbox and WhatsApp messages. If you do not receive it within 5 minutes, check spam folder or reply to the confirmation email.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What should I prepare before the session?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Just bring a notebook and an open mind. Join from a quiet place where you can focus for 2 hours. Keep your video on for better engagement. Varsha will share worksheets during the session that you can download and use later.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is this suitable for people outside India?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes, the strategies taught work globally. While some examples are India specific, the frameworks apply to any market. Timing is 7 to 9 PM IST. Please convert to your timezone before registering.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Varsha LIVE</h3>
+                    <p>Building financial freedom through flexible income strategies since 2015. Helping professionals, homemakers, and students create income that fits their life.</p>
+                </div>
+                <div class="footer-links">
+                    <h3 style="color: white; font-size: 1rem; margin-bottom: 16px;">Quick Links</h3>
+                    <p style="margin-bottom: 8px;"><a href="#agenda" style="color: rgba(255,255,255,0.7); text-decoration: none;">Session Agenda</a></p>
+                    <p style="margin-bottom: 8px;"><a href="#faq" style="color: rgba(255,255,255,0.7); text-decoration: none;">FAQ</a></p>
+                    <p style="margin-bottom: 8px;"><a href="#about" style="color: rgba(255,255,255,0.7); text-decoration: none;">About Varsha</a></p>
+                </div>
+                <div class="footer-links">
+                    <h3 style="color: white; font-size: 1rem; margin-bottom: 16px;">Contact</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem; margin-bottom: 8px;">Email: support@varshalive.com</p>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem;">WhatsApp: +91 98765 43210</p>
+                </div>
+            </div>
+            
+            <div class="footer-disclaimer">
+                <div class="disclaimer-title">DISCLAIMER</div>
+                <p class="disclaimer-text">Results are not guaranteed and vary based on individual effort, experience, and market conditions. The information shared in this session is for educational purposes only. This is not financial, legal, or investment advice. Your earnings depend on your dedication and implementation. By registering, you agree to receive session updates on WhatsApp and Email.</p>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2024 Varsha LIVE. All Rights Reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="sticky-cta">
+        <button class="btn btn-primary btn-block" id="stickyRegister">Register Free Now</button>
+    </div>
+
+    <script>
+        // Countdown Timer - Set to next weekday 7 PM
+        function getNextWeekdaySevenPM() {
+            const now = new Date();
+            const target = new Date();
+            target.setHours(19, 0, 0, 0);
+            
+            if (now.getHours() >= 19) {
+                target.setDate(target.getDate() + 1);
+            }
+            
+            const day = target.getDay();
+            if (day === 6) target.setDate(target.getDate() + 2);
+            if (day === 0) target.setDate(target.getDate() + 1);
+            
+            return target;
+        }
+        
+        const countDownDate = getNextWeekdaySevenPM().getTime();
+        
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            
+            if (distance < 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            }
+        }
+        
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        
+        // Form Submission
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formSuccess = document.getElementById('formSuccess');
+            formSuccess.style.display = 'block';
+            
+            this.reset();
+            
+            setTimeout(() => {
+                formSuccess.style.display = 'none';
+            }, 5000);
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Replace 'YOUR_APPS_SCRIPT_URL' with the URL you copied during deployment
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxeN1tars98JYMat7DL8TpfqmZr24NgzALSxZnGeDmeB8eDmcbCf6W0BQXAS-8Bu6NMCA/exec';
+
+document.getElementById('registrationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const submitBtn = this.querySelector('button');
+    const formSuccess = document.getElementById('formSuccess');
+    
+    // 1. Change button state to show progress
+    submitBtn.innerText = 'Registering...';
+    submitBtn.disabled = true;
+
+    // 2. Collect the data from inputs
+    const formData = {
+        firstName: document.getElementById('firstName').value,
+        whatsapp: document.getElementById('whatsapp').value,
+        email: document.getElementById('email').value
+    };
+
+    // 3. Send data to Google Sheets via Fetch API
+    fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors', // Essential for Google Apps Script cross-origin requests
+        cache: 'no-cache',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+    })
+    .then(response => {
+        // Since we use 'no-cors', we won't see the 'success' body, 
+        // but if it doesn't catch, the request likely went through.
+        formSuccess.style.display = 'block';
+        formSuccess.innerText = "Registration successful! Check your WhatsApp for the link.";
+        this.reset();
+    })
+    .catch(error => {
+        console.error('Error!', error.message);
+        alert("Something went wrong. Please try again.");
+    })
+    .finally(() => {
+        // Reset button state
+        submitBtn.innerText = 'Register for Free Session';
+        submitBtn.disabled = false;
+        
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+            formSuccess.style.display = 'none';
+        }, 5000);
+    });
+});
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+        
+        // Sticky CTA
+        document.getElementById('stickyRegister').addEventListener('click', () => {
+            document.querySelector('.form-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
